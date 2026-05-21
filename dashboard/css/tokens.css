@@ -1,0 +1,61 @@
+:root {
+  --color-bg-base:       #0f1117;
+  --color-bg-surface:    #1a1d27;
+  --color-bg-elevated:   #252836;
+  --color-border:        #2e3248;
+  --color-text-primary:  #e2e8f0;
+  --color-text-secondary:#94a3b8;
+  --color-text-muted:    #64748b;
+  --color-accent:        #6366f1;
+  --color-accent-hover:  #818cf8;
+
+  --color-status-idle:      #64748b;
+  --color-status-running:   #22c55e;
+  --color-status-error:     #ef4444;
+  --color-status-offline:   #374151;
+  --color-status-paused:    #f59e0b;
+
+  --color-task-pending:   #94a3b8;
+  --color-task-queued:    #a78bfa;
+  --color-task-running:   #22c55e;
+  --color-task-completed: #3b82f6;
+  --color-task-failed:    #ef4444;
+  --color-task-cancelled: #6b7280;
+
+  --color-log-info:  #60a5fa;
+  --color-log-warn:  #f59e0b;
+  --color-log-error: #ef4444;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --font-sans: 'Inter', 'Pretendard', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-lg:   17px;
+  --text-xl:   20px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.5);
+}
+
+[data-theme="light"] {
+  --color-bg-base:       #f8fafc;
+  --color-bg-surface:    #ffffff;
+  --color-bg-elevated:   #f1f5f9;
+  --color-border:        #e2e8f0;
+  --color-text-primary:  #0f172a;
+  --color-text-secondary:#475569;
+  --color-text-muted:    #94a3b8;
+}

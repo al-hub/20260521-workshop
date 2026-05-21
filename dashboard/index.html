@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Agent Orchestration Dashboard</title>
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <div class="dashboard-root">
+
+    <!-- 상단 바 -->
+    <header class="top-bar">
+      <div class="top-bar__left">
+        <span class="top-bar__logo">⬡ Atlas</span>
+        <span class="top-bar__title">Multi-Agent Orchestration Dashboard</span>
+      </div>
+      <div class="top-bar__right">
+        <span id="refresh-status">갱신 대기 중...</span>
+        <button id="btn-auto-refresh" class="btn btn--ghost" title="자동 갱신 토글">⏸ 갱신 중</button>
+        <button id="btn-theme-toggle" class="btn btn--ghost" title="테마 전환">🌙 다크</button>
+      </div>
+    </header>
+
+    <!-- 4-패널 그리드 -->
+    <main class="panel-grid">
+
+      <!-- 에이전트 패널 -->
+      <section id="panel-agents" class="panel">
+        <div class="panel-header">
+          <div class="panel-header__left">
+            <span class="panel-title">🤖 에이전트</span>
+            <span class="notification-badge" id="badge-agents" data-count="0"></span>
+          </div>
+        </div>
+        <div class="panel-body"></div>
+      </section>
+
+      <!-- 태스크 패널 -->
+      <section id="panel-tasks" class="panel">
+        <div class="panel-header">
+          <div class="panel-header__left">
+            <span class="panel-title">📋 태스크</span>
+            <span class="notification-badge" id="badge-tasks" data-count="0"></span>
+          </div>
+        </div>
+        <div class="panel-body"></div>
+      </section>
+
+      <!-- 로그/메모 패널 -->
+      <section id="panel-logs" class="panel">
+        <div class="panel-header">
+          <div class="panel-header__left">
+            <span class="panel-title">📜 로그 / 메모</span>
+            <span class="notification-badge" id="badge-logs" data-count="0"></span>
+          </div>
+        </div>
+        <div class="panel-body"></div>
+      </section>
+
+      <!-- 전략 체크리스트 패널 -->
+      <section id="panel-checklist" class="panel">
+        <div class="panel-header">
+          <div class="panel-header__left">
+            <span class="panel-title">⚙️ 모델 전략</span>
+            <span class="notification-badge" id="badge-checklist" data-count="0"></span>
+          </div>
+        </div>
+        <div class="panel-body"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JS 로드 순서 엄수 (ES 모듈 아님) -->
+  <script src="js/constants.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/app-state.js"></script>
+  <script src="js/agents.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/logs.js"></script>
+  <script src="js/checklist.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
