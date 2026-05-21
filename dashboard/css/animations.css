@@ -1,0 +1,138 @@
+/* ─────────────────────────────────────────
+   animations.css — 트랜지션 & 키프레임
+   ───────────────────────────────────────── */
+
+/* 테마 전환: 색상 관련 속성 부드럽게 */
+*, *::before, *::after {
+  transition:
+    background-color 0.25s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 인터랙션 요소는 transition 짧게 유지 */
+button, select, input, textarea {
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease,
+    opacity 0.12s ease;
+}
+
+/* ─── 에이전트 카드 진입 ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.agent-card {
+  animation: fadeInUp 0.2s ease both;
+}
+
+/* 카드 순서별 딜레이 (최대 6개) */
+.agent-card:nth-child(1) { animation-delay: 0ms; }
+.agent-card:nth-child(2) { animation-delay: 40ms; }
+.agent-card:nth-child(3) { animation-delay: 80ms; }
+.agent-card:nth-child(4) { animation-delay: 120ms; }
+.agent-card:nth-child(5) { animation-delay: 160ms; }
+.agent-card:nth-child(6) { animation-delay: 200ms; }
+
+/* ─── 로그 엔트리 슬라이드 ─── */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.log-entry {
+  animation: slideInLeft 0.15s ease both;
+}
+
+/* ─── 알림 배지 펄스 ─── */
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.notification-badge.pulse {
+  animation: badgePulse 0.5s ease;
+}
+
+/* ─── 자동 갱신 스피너 ─── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.refresh-spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+/* ─── 패널 호버 강조 ─── */
+.panel {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── config-panel 슬라이드 오픈 ─── */
+.config-panel {
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.config-panel.open {
+  opacity: 1;
+}
+
+/* ─── 전략 버튼 전환 ─── */
+.strategy-btn {
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.strategy-btn:active {
+  transform: scale(0.97);
+}
+
+/* ─── 필터 버튼 전환 ─── */
+.filter-btn, .log-level-btn {
+  transition:
+    background-color 0.12s ease,
+    color 0.12s ease,
+    border-color 0.12s ease;
+}
+
+/* ─── 태스크 행 호버 ─── */
+.task-row {
+  transition: background-color 0.1s ease;
+}
+
+/* ─── 체크리스트 아이템 전환 ─── */
+.checklist-item {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
