@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4컷 웹툰 오케스트레이션</title>
+  <link rel="stylesheet" href="css/webtoon-tokens.css" />
+  <link rel="stylesheet" href="css/webtoon-layout.css" />
+  <link rel="stylesheet" href="css/webtoon-panels.css" />
+  <link rel="stylesheet" href="css/webtoon-animations.css" />
+</head>
+<body>
+  <header class="wt-header">
+    <h1 class="wt-header__title">4컷 웹툰 오케스트레이터</h1>
+    <span id="js-pipeline-badge" class="wt-badge wt-badge--idle">idle</span>
+  </header>
+
+  <nav class="wt-tabs" role="tablist">
+    <button class="wt-tab wt-tab--active" data-tab="setup"      role="tab">1. 설정</button>
+    <button class="wt-tab"               data-tab="storyboard"  role="tab">2. 스토리보드</button>
+    <button class="wt-tab"               data-tab="webtoon"     role="tab">3. 웹툰</button>
+    <button class="wt-tab"               data-tab="strategy"    role="tab">4. 전략</button>
+  </nav>
+
+  <main class="wt-main">
+    <section id="tab-setup"      class="wt-panel wt-panel--active" role="tabpanel"></section>
+    <section id="tab-storyboard" class="wt-panel"                  role="tabpanel"></section>
+    <section id="tab-webtoon"    class="wt-panel"                  role="tabpanel"></section>
+    <section id="tab-strategy"   class="wt-panel"                  role="tabpanel"></section>
+  </main>
+
+  <aside id="js-agent-log" class="wt-log-sidebar"></aside>
+
+  <script src="js/constants.js"></script>
+  <script src="js/webtoon-state.js"></script>
+  <script src="js/setup-agent.js"></script>
+  <script src="js/storyboard.js"></script>
+  <script src="js/webtoon-renderer.js"></script>
+  <script src="js/agent-log.js"></script>
+  <script src="js/strategy.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

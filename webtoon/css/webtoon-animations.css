@@ -1,0 +1,36 @@
+/* 탭 전환 페이드인 */
+.wt-panel--active { animation: wt-fade-in 200ms ease forwards; }
+@keyframes wt-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 로그 신규 항목 슬라이드인 */
+.log-entry--new { animation: log-slide-in 250ms ease forwards; }
+@keyframes log-slide-in {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* 말풍선 팝 등장 */
+.wt-speech-bubble { animation: bubble-pop 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+@keyframes bubble-pop {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* 파이프라인 진행 중 배지 펄스 */
+.wt-badge--collecting,
+.wt-badge--storyboarding,
+.wt-badge--rendering { animation: badge-pulse 1.5s ease-in-out infinite; }
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* 스토리보드 패널 등장 */
+.sb-panel { animation: panel-slide-up 300ms ease forwards; }
+@keyframes panel-slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

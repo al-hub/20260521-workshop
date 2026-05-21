@@ -1,0 +1,82 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--wt-bg-base);
+  color: var(--wt-text-primary);
+  font-family: var(--wt-font-base);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr 280px;
+  grid-template-areas:
+    "header  header"
+    "tabs    tabs"
+    "main    log";
+}
+
+.wt-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  gap: var(--wt-space-md);
+  padding: var(--wt-space-md) var(--wt-space-lg);
+  background: var(--wt-bg-surface);
+  border-bottom: 1px solid var(--wt-border);
+}
+.wt-header__title { font-size: var(--wt-size-xl); font-weight: 700; }
+
+.wt-tabs {
+  grid-area: tabs;
+  display: flex;
+  gap: 2px;
+  padding: var(--wt-space-sm) var(--wt-space-lg);
+  background: var(--wt-bg-surface);
+  border-bottom: 1px solid var(--wt-border);
+}
+
+.wt-tab {
+  padding: var(--wt-space-sm) var(--wt-space-md);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--wt-radius);
+  color: var(--wt-text-secondary);
+  cursor: pointer;
+  font-size: var(--wt-size-sm);
+  transition: background var(--wt-transition), color var(--wt-transition);
+}
+.wt-tab:hover { background: var(--wt-bg-elevated); color: var(--wt-text-primary); }
+.wt-tab--active { background: var(--wt-accent); color: #fff; border-color: var(--wt-accent); }
+
+.wt-main { grid-area: main; overflow-y: auto; padding: var(--wt-space-lg); }
+.wt-panel { display: none; }
+.wt-panel--active { display: block; }
+
+.wt-log-sidebar {
+  grid-area: log;
+  background: var(--wt-bg-surface);
+  border-left: 1px solid var(--wt-border);
+  overflow-y: auto;
+  padding: var(--wt-space-md);
+}
+
+.wt-badge {
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: var(--wt-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.wt-badge--idle          { background: var(--wt-bg-elevated); color: var(--wt-text-secondary); }
+.wt-badge--collecting    { background: var(--wt-warning);     color: #000; }
+.wt-badge--storyboarding { background: var(--wt-accent);      color: #fff; }
+.wt-badge--rendering     { background: var(--wt-accent);      color: #fff; }
+.wt-badge--done          { background: var(--wt-success);     color: #fff; }
+
+@media print {
+  body { display: block; }
+  .wt-header, .wt-tabs, .wt-log-sidebar { display: none; }
+  .wt-main { padding: 0; }
+  .wt-panel { display: block !important; }
+  #tab-setup, #tab-storyboard, #tab-strategy { display: none !important; }
+  #tab-webtoon { display: block !important; }
+}

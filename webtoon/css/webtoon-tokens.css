@@ -1,0 +1,42 @@
+:root {
+  --wt-bg-base:        #0f1117;
+  --wt-bg-surface:     #1a1d27;
+  --wt-bg-elevated:    #242736;
+  --wt-border:         #2e3147;
+  --wt-text-primary:   #e8eaf0;
+  --wt-text-secondary: #8b90a7;
+  --wt-accent:         #7c6ff7;
+  --wt-accent-hover:   #9d98f8;
+  --wt-success:        #4caf84;
+  --wt-warning:        #f0a500;
+  --wt-danger:         #e05c5c;
+
+  --wt-font-base:  'Noto Sans KR', system-ui, sans-serif;
+  --wt-font-mono:  'JetBrains Mono', monospace;
+  --wt-size-xs:    0.75rem;
+  --wt-size-sm:    0.875rem;
+  --wt-size-md:    1rem;
+  --wt-size-lg:    1.25rem;
+  --wt-size-xl:    1.5rem;
+
+  --wt-space-xs:  4px;
+  --wt-space-sm:  8px;
+  --wt-space-md:  16px;
+  --wt-space-lg:  24px;
+  --wt-space-xl:  32px;
+
+  --wt-radius:    8px;
+  --wt-radius-lg: 16px;
+  --wt-shadow:    0 2px 12px rgba(0,0,0,0.4);
+  --wt-transition: 200ms ease;
+}
+
+@media print {
+  :root {
+    --wt-bg-base:      #ffffff;
+    --wt-bg-surface:   #ffffff;
+    --wt-bg-elevated:  #f5f5f5;
+    --wt-border:       #cccccc;
+    --wt-text-primary: #000000;
+  }
+}
